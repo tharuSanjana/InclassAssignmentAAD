@@ -1,4 +1,18 @@
 package org.example.beans;
 
-public class ChickenRoll {
+import org.example.contract.Food;
+import org.example.customAnnotation.Roll;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
+@Primary
+@Qualifier("tasty")
+@Roll
+public class ChickenRoll implements Food {
+    @Override
+    public void food() {
+        System.out.println("I like chicken roll");
+    }
 }
